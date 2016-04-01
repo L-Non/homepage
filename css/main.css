@@ -552,6 +552,7 @@ h1 {
   font-weight: 500; }
 
 .btn {
+  display: inline-block;
   padding: 0.75em 1.5em;
   border-radius: 1px;
   border: 1px solid #999;

@@ -6,18 +6,19 @@
 
     $('.logo').realshadow({
       type: 'text',
-      length: 4,
-      color: '119,119,119'
+      length: 7,
+      color: '0,0,0',
     });
 
-    $('.headline').realshadow({
-      type: 'text',
-      inverse: true,
-      length: 9
-    });
-
-    $('.contact').realshadow({
+    $('.headline li').realshadow({
       type: 'text'
+    });
+
+    $('.contact .btn').realshadow({
+      // type: 'text'
+      length: 1,
+      color: '102,102,102',
+      inverse: true
     });
 
 

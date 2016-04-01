@@ -116,11 +116,10 @@ h1 {
   align-self: flex-start;
   text-align: center;
   font-weight: 500;
-
-
 }
 
 .btn {
+  display: inline-block;
   padding: $spacing/2 $spacing;
   border-radius: 1px;
   border: 1px solid $text-light;
