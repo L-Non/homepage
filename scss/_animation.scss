@@ -1,0 +1,149 @@
+/* Underline From Center */
+.hvr-underline-from-center {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  overflow: hidden;
+}
+.hvr-underline-from-center:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  background: $text-light;
+  height: 1px;
+  -webkit-transition-property: left, right;
+  transition-property: left, right;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-underline-from-center:hover:before, .hvr-underline-from-center:focus:before, .hvr-underline-from-center:active:before {
+  left: 0;
+  right: 0;
+}
+
+/* Grow Shadow */
+.hvr-grow-shadow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  backface-visibility: hidden;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: box-shadow, transform;
+  transition-property: box-shadow, transform;
+}
+.hvr-grow-shadow:hover, .hvr-grow-shadow:focus, .hvr-grow-shadow:active {
+  box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  -webkit-font-smoothing: antialiased;
+  backface-visibility: hidden;
+
+
+}
+
+
+// pulsating background
+@keyframes pulse-bg {
+  0% {
+    background: $bg-1;
+  }
+
+  50% {
+    background: $bg-2;
+  }
+
+  100% {
+    background: $bg-1;
+  }
+}
+
+.pulse-bg {
+  animation-name: pulse-bg;
+  animation-duration: 4200ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+
+// breating
+@keyframes breathing {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(0.95);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+}
+
+.breathing {
+  animation-name: breathing;
+  animation-duration: 4.2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+// cascade
+@keyframes cascade {
+  0% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.25;
+  }
+}
+
+.cascade span {
+  display: inline-block;
+  animation-name: cascade;
+  animation-duration: 3.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.cascade span:nth-child(1) {
+  animation-delay: 0.45s;
+}
+
+.cascade span:nth-child(2) {
+  animation-delay: 0.6s;
+}
+
+.cascade span:nth-child(3) {
+  animation-delay: 0.75s;
+}
+
+.cascade span:nth-child(4) {
+  animation-delay: 0.90s;
+}
+
+.cascade span:nth-child(5) {
+  animation-delay: 1.05s;
+}
+
