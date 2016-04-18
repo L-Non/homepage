@@ -7,7 +7,9 @@ $text-light: #999;
 $bg-1: #f1f1f1;
 $bg-2: white;
 
-$dual: 'Dual W00'; // 400, 500, 600, 700
+$font-fallback: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+$dual: 'Dual W00', $font-fallback; // 400, 500, 600, 700
 
 
 
