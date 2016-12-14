@@ -7,6 +7,15 @@ $text-light: #999;
 $bg-1: #f1f1f1;
 $bg-2: white;
 
+$gray1: #3c3c3d !default;
+$gray2: #5a5a5b !default;
+$gray3: #7d7d7e !default;
+
+// light shades
+$gray4: #cdcdce !default;
+$gray5: #dededf !default;
+$gray6: #efeff0 !default;
+
 $font-fallback: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
 $dual: 'Dual W00', $font-fallback; // 400, 500, 600, 700
@@ -19,6 +28,11 @@ $dual: 'Dual W00', $font-fallback; // 400, 500, 600, 700
 @import '_animation';
 
 
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
 
 
 html {
@@ -36,7 +50,8 @@ html {
 
 body {
   font-family: $dual;
-  color: $text-primary;
+  color: $gray1;
+  background-color: $gray1;
 }
 
 h1, h2, h3, h4 {
@@ -47,88 +62,147 @@ h1, h2, h3, h4 {
 .container {
   height: 100vh;
   width: 100%;
-  max-width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-
-  padding: $spacing*2 $spacing;
-  background-color: $bg-1;
+  background-color: $gray6;
 }
 
-h1 {
-  margin-top: $spacing;
-  width: 100%;
-  flex-basis: 100%;
+$circle-size: 4rem;
+
+.circle {
+  // display: table;
+  // width: $circle-size;
+  // height: $circle-size;
+  position: absolute;
+  // vertical-align: middle;
   text-align: center;
-  font-size: 3.6em;
-  line-height: 1;
-  font-weight: 500;
+  width: 100%;
+  top: $spacing/2;
+  left: $spacing/2;
 }
+
+.circle__backdrop {
+  // position: absolute;
+  // top: 0;
+  // bottom: 0;
+  // right: 0;
+  // left: 0;
+  // border-radius: 50%;
+  // padding: $spacing;
+  // background-color: rgba($gray3, 0.9);
+  // display: inline-block;
+  // margin: 0 auto;
+  // width: $circle-size;
+  // height: $circle-size;
+  // z-index: 10;
+}
+
+.circle__title {
+  // position: relative;
+  // display: table-cell;
+  color: $gray2;
+  // vertical-align: middle;
+  font-weight: 500;
+  letter-spacing: 1px;
+  z-index: 100;
+  font-size: 1.35rem;
+  margin: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.focus {
+  position: absolute;
+  top: 42%;
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+}
+
 
 .headline {
-  width: 100%;
-  flex-basis: 100%;
-  font-size: 0.85em;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: $text-light;
-  font-weight: 500;
-  text-align: center;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
 
   li {
-    display: block;
-    margin-bottom: $spacing/2;
+    display: inline-block;
+    margin-right: $spacing;
+    text-transform: uppercase;
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: $gray2;
 
-    @include tablet {
-      display: inline-block;
-      margin-bottom: 0;
-      margin-right: $spacing;
-      &:last-of-type {
-        margin-right: 0;
-      }
+    &:last-of-type {
+      margin-right: 0;
     }
 
+    @include tablet {
+      margin-right: $spacing*1.5;
+    }
+
+    @include desktop {
+      margin-right: $spacing*2;
+    }
   }
 }
 
-.social {
-  width: 100%;
-  flex-basis: 100%;
+.switch {
+  position: absolute;
+  bottom: $spacing;
   text-align: center;
-  align-self: flex-end;
+  width: 100%;
 
-  img {
-    opacity: 0.35;
-    transition: opacity 1s;
+  span {
+    background-color: $gray6;
+    padding: $spacing/4 $spacing;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: $gray3;
+    border-radius: 0.15rem;
+    border: 1px solid $gray4;
+    cursor: pointer;
+    transition: background 0.35s ease-in-out;
+
     &:hover {
-      opacity: 0.85;
-      transition: opacity 1s;
+      background-color: $gray4;
     }
   }
 }
 
 .contact {
-  width: 100%;
-  flex-basis: 100%;
-  align-self: flex-start;
+  position: absolute;
+  bottom: $spacing/2;
   text-align: center;
-  font-weight: 500;
+  left: $spacing;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+
+  a {
+    color: $gray3;
+    text-decoration: none;
+  }
 }
 
-.btn {
-  display: inline-block;
-  padding: $spacing/2 $spacing;
-  border-radius: 1px;
-  border: 1px solid $text-light;
+.colophon {
+  position: absolute;
+  bottom: $spacing/2;
+  text-align: center;
+  right: $spacing;
+  font-size: 0.7rem;
+  font-weight: 500;
   text-transform: uppercase;
-  font-size: 0.75em;
-  letter-spacing: 1px;
-  font-weight: 600;
-  color: $text-secondary;
-  text-decoration: none;
+
+
+  a {
+    color: $gray3;
+    text-decoration: none;
+  }
 }
+
+

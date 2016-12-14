@@ -431,14 +431,31 @@ th {
     transform: scale(1);
     opacity: 1; }
   50% {
-    transform: scale(0.95);
-    opacity: 0.8; }
+    transform: scale(0.9);
+    opacity: 0.9; }
   100% {
     transform: scale(1);
     opacity: 1; } }
 .breathing {
   animation-name: breathing;
   animation-duration: 4.2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; }
+
+@keyframes breathing-secondary {
+  0% {
+    transform: scale(1);
+    opacity: 1; }
+  50% {
+    transform: scale(0.95);
+    opacity: 0.9; }
+  100% {
+    transform: scale(1);
+    opacity: 1; } }
+.breathing-secondary {
+  animation-name: breathing-secondary;
+  animation-duration: 4.2s;
+  animation-delay: 0.5s;
   animation-iteration-count: infinite;
   animation-timing-function: linear; }
 
@@ -471,6 +488,11 @@ th {
 .cascade li:nth-child(5) {
   animation-delay: 1.05s; }
 
+*,
+*:after,
+*:before {
+  box-sizing: border-box; }
+
 html {
   box-sizing: border-box;
   font-size: 100%; }
@@ -483,7 +505,8 @@ html {
 
 body {
   font-family: "Dual W00", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #333; }
+  color: #3c3c3d;
+  background-color: #3c3c3d; }
 
 h1, h2, h3, h4 {
   font-family: "Dual W00", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -492,75 +515,95 @@ h1, h2, h3, h4 {
 .container {
   height: 100vh;
   width: 100%;
-  max-width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  padding: 3em 1.5em;
-  background-color: #f1f1f1; }
+  background-color: #efeff0; }
 
-h1 {
-  margin-top: 1.5em;
-  width: 100%;
-  flex-basis: 100%;
+.circle {
+  position: absolute;
   text-align: center;
-  font-size: 3.6em;
-  line-height: 1;
-  font-weight: 500; }
-
-.headline {
   width: 100%;
-  flex-basis: 100%;
-  font-size: 0.85em;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #999;
+  top: 0.75em;
+  left: 0.75em; }
+
+.circle__title {
+  color: #5a5a5b;
   font-weight: 500;
+  letter-spacing: 1px;
+  z-index: 100;
+  font-size: 1.35rem;
+  margin: 0;
   text-align: center;
-  list-style-type: none;
-  padding: 0;
-  margin: 0; }
-  .headline li {
-    display: block;
-    margin-bottom: 0.75em; }
-    @media (min-width: 768px) {
-      .headline li {
-        display: inline-block;
-        margin-bottom: 0;
-        margin-right: 1.5em; }
-        .headline li:last-of-type {
-          margin-right: 0; } }
+  width: 100%; }
 
-.social {
-  width: 100%;
-  flex-basis: 100%;
+.focus {
+  position: absolute;
+  top: 42%;
   text-align: center;
-  align-self: flex-end; }
-  .social img {
-    opacity: 0.35;
-    transition: opacity 1s; }
-    .social img:hover {
-      opacity: 0.85;
-      transition: opacity 1s; }
+  margin: 0 auto;
+  width: 100%; }
+
+.headline ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+.headline li {
+  display: inline-block;
+  margin-right: 1.5em;
+  text-transform: uppercase;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #5a5a5b; }
+  .headline li:last-of-type {
+    margin-right: 0; }
+  @media (min-width: 768px) {
+    .headline li {
+      margin-right: 2.25em; } }
+  @media (min-width: 1024px) {
+    .headline li {
+      margin-right: 3em; } }
+
+.switch {
+  position: absolute;
+  bottom: 1.5em;
+  text-align: center;
+  width: 100%; }
+  .switch span {
+    background-color: #efeff0;
+    padding: 0.375em 1.5em;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #7d7d7e;
+    border-radius: 0.15rem;
+    border: 1px solid #cdcdce;
+    cursor: pointer;
+    transition: background 0.35s ease-in-out; }
+    .switch span:hover {
+      background-color: #cdcdce; }
 
 .contact {
-  width: 100%;
-  flex-basis: 100%;
-  align-self: flex-start;
+  position: absolute;
+  bottom: 0.75em;
   text-align: center;
-  font-weight: 500; }
+  left: 1.5em;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 1px; }
+  .contact a {
+    color: #7d7d7e;
+    text-decoration: none; }
 
-.btn {
-  display: inline-block;
-  padding: 0.75em 1.5em;
-  border-radius: 1px;
-  border: 1px solid #999;
-  text-transform: uppercase;
-  font-size: 0.75em;
-  letter-spacing: 1px;
-  font-weight: 600;
-  color: #666;
-  text-decoration: none; }
+.colophon {
+  position: absolute;
+  bottom: 0.75em;
+  text-align: center;
+  right: 1.5em;
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase; }
+  .colophon a {
+    color: #7d7d7e;
+    text-decoration: none; }
 
 /*# sourceMappingURL=main.css.map */
