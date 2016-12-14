@@ -521,8 +521,7 @@ h1, h2, h3, h4 {
   position: absolute;
   text-align: center;
   width: 100%;
-  top: 0.75em;
-  left: 0.75em; }
+  top: 0.75em; }
 
 .circle__title {
   color: #5a5a5b;
@@ -531,8 +530,7 @@ h1, h2, h3, h4 {
   z-index: 100;
   font-size: 1.35rem;
   margin: 0;
-  text-align: center;
-  width: 100%; }
+  text-align: center; }
 
 .focus {
   position: absolute;
